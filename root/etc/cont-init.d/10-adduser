@@ -1,0 +1,28 @@
+#!/usr/bin/with-contenv bash
+PUID=${PUID:-911}
+PGID=${PGID:-911}
+
+ groupmod -o -g "$PGID" abc 
+usermod -o -u "$PUID" abc
+
+echo ' -------------------------------------
+### Powered by Ubuntu Core ###
+## Info ##
+OS: Ubuntu 
+Always based on: https://partner-images.canonical.com/core/bionic/current/ubuntu-bionic-core-cloudimg-amd64-root.tar.gz
+
+Rebuild 
+every week.
+
+## Thies88 ##
+-------------------------------------' 
+echo ' ------------------------------------- 
+GID/UID 
+-------------------------------------'
+echo " 
+User uid: $(id -u abc) 
+User gid: $(id -g abc) 
+------------------------------------- "
+chown abc:abc /app
+chown abc:abc /config
+chown abc:abc /defaults
