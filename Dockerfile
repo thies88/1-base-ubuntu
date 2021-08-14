@@ -111,9 +111,10 @@ RUN \
 	patch \
 	tzdata && \
  locale-gen ${LANG} && \
- echo "****Fixing timezone based on timezone set in docker argument****" && \
+ #echo "****Fixing timezone based on timezone set in docker argument****" && \
  rm -rf /etc/localtime && \
  ln -s /usr/share/zoneinfo/${TZ} /etc/localtime && \
+ echo "****clean unneeded timezone files****" && \
  SUBSTR=$(echo ${TZ}| cut -d'/' -f 1) && \
  SUBSTR2=$(echo ${TZ}| cut -d'/' -f 2) && \
  cd /usr/share/zoneinfo && \
@@ -135,10 +136,12 @@ RUN \
  apt-get remove -y patch && \
  apt-get autoremove && \
  apt-get clean && \
- echo "**** cleanup locales ****" && \
- cp /usr/share/i18n/locales/en_US /tmp && \
- rm -rf /usr/share/i18n/locales/??_?? && rm -rf /usr/share/i18n/locales/???_?? && \
- cp /tmp/en_US /usr/share/i18n/locales/ && \
+ echo "**** cleanup locales unneeded ****" && \
+ cp /usr/share/i18n/locales/en_* /tmp && \
+ cp /usr/share/i18n/locales/i18n* /tmp && \
+ rm -rf /usr/share/i18n/locales/* && \
+ cp /tmp/en_* /usr/share/i18n/locales/ && \
+ cp /tmp/i18n* /usr/share/i18n/locales/ && \
  rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \

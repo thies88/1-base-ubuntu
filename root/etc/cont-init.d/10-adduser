@@ -9,7 +9,7 @@ echo ' -------------------------------------
 ### Powered by Ubuntu Core ###
 ## Info ##
 OS: Ubuntu 
-Always based on: https://partner-images.canonical.com/core/bionic/current/ubuntu-bionic-core-cloudimg-amd64-root.tar.gz
+Always based on: https://partner-images.canonical.com/core/${REL}/current/ubuntu-${REL}-core-cloudimg-amd64-root.tar.gz
 
 Rebuild 
 every week.
