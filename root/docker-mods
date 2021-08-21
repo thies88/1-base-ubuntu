@@ -2,7 +2,8 @@
 
 # Exit if mods is not set
 if [ -z ${DOCKER_MODS+x} ]; then
-  exit 0 fi
+  exit 0 
+fi
 # Check for curl
 if [ ! -f /usr/bin/curl ]; then
   echo "[mod-init] Curl was not found on this system for Docker mods installing"
@@ -15,7 +16,8 @@ if [ ! -f /usr/bin/curl ]; then
     # Alpine
     apk add --no-cache \
       curl
-  fi fi
+  fi
+fi
 # Main run logic
 echo "[mod-init] Attempting to run Docker Modification Logic" 
 IFS='|'
@@ -70,5 +72,5 @@ for DOCKER_MOD in "${DOCKER_MODS[@]}"; do
       "https://registry-1.docker.io/v2/${ENDPOINT}/blobs/${SHALAYER}" \
       | tar xz -C /
     echo ${SHALAYER} > "/${FILENAME}"
-  fi 
+  fi  
 done
