@@ -152,11 +152,11 @@ RUN \
 	/usr/share/info/* \
 	/usr/share/man/* && \
  echo "**** create deleted folder man1 ****" && \
- mkdir -p /usr/share/man/man1
+ #mkdir -p /usr/share/man/man1
 	
 #echo "Get packages list and write to file"
 #mkdir -p /package-list && \
-#apt list --installed > /package-list/package-list.txtr
+#apt list --installed > /package-list/package-list.txt
 		
 # add local files
 COPY root/ /
