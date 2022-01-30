@@ -151,7 +151,7 @@ RUN \
 	/usr/share/doc/* \
 	/usr/share/info/* \
 	/usr/share/man/* && \
- echo "**** create deleted folder man1 ****" && \
+ echo "**** create deleted folder man1 ****"
  #mkdir -p /usr/share/man/man1
 	
 #echo "Get packages list and write to file"
