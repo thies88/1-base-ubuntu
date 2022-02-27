@@ -52,7 +52,7 @@ ARG ARCH
 ENV ARCH=${ARCH}
 ARG TZ=Europe/Amsterdam
 ARG DEBIAN_FRONTEND="noninteractive"
-ENV HOME="/root" \
+ENV HOME="/config" \
 LANGUAGE="en_US.UTF-8" \
 LANG="en_US.UTF-8" \
 TERM="xterm"
@@ -143,6 +143,7 @@ RUN \
  cp /tmp/en_* /usr/share/i18n/locales/ && \
  cp /tmp/i18n* /usr/share/i18n/locales/ && \
  rm -rf \
+	/root \
 	/tmp/* \
 	/var/lib/apt/lists/* \
 	/var/cache/apt/* \
