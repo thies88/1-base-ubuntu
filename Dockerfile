@@ -3,7 +3,7 @@ ARG REL=focal
 ARG ARCH=amd64
 
 #Use alpine as base-build image to pull the ubuntu cloud image from: https://partner-images.canonical.com and create rootfs.
-FROM alpine:3.12 as rootfs-stage
+FROM alpine:3.17 as rootfs-stage
 
 # Set local vars for rootfs-stage
 ARG REL
